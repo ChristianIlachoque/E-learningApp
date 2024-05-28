@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
   templateUrl: './restore-password.component.html',
   styleUrl: './restore-password.component.css'
 })
-export class RestorePasswordComponent {
+export class RestorePasswordComponent  {
+
+  showFirstPart: boolean = true;
+
+  continue() {
+    this.showFirstPart = false;
+  }
+
+
 
 }
