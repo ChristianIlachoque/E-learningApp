@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+
+
+  showPassword1: boolean = false;
+  
+  togglePassword1() {
+    this.showPassword1 = !this.showPassword1;
+  }
 }

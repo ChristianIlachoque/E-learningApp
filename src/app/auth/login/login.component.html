@@ -78,9 +78,28 @@
           <div class="mb-3">
             <input type="text" class="form-control" placeholder="Ingrese su usuario" />
           </div>
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <input type="password" class="form-control" placeholder="Ingrese su contraseña" />
+          </div> -->
+
+          <div class="input mb-3 ojito">
+            <input
+              [type]="showPassword1 ? 'text' : 'password'"
+              class="form-control"
+              placeholder="Ingrese la contraseña"
+            />
+            <div class="input-append">
+              <span
+                class="input-text toggle-password"
+                (click)="togglePassword1()"
+              >
+                <i
+                  [class]="showPassword1 ? 'fas fa-eye-slash' : 'fas fa-eye'"
+                ></i>
+              </span>
+            </div>
           </div>
+
         </div>
         <div class="form-check">
           <label class="form-check-label text-secondary">
