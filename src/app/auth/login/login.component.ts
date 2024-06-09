@@ -18,6 +18,7 @@ export class LoginComponent {
   onLogin(): void {
     if(this.username == "" || this.password == ""){
       alert("Ingrese usuario y contraseña")
+      return;
     }
     this.authService.login(this.username, this.password);
   }
