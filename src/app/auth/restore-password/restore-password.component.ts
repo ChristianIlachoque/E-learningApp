@@ -34,9 +34,27 @@ export class RestorePasswordComponent {
   password2 = '';
   password3 = '';
 
-  password1Invalid = false;
-  password2Invalid = false;
-  password3Invalid = false;
+
+  password1Errors = {
+    minLength: false,
+    upperCase: false,
+    number: false,
+    specialChar: false
+  };
+
+  password2Errors = {
+    minLength: false,
+    upperCase: false,
+    number: false,
+    specialChar: false
+  };
+
+  password3Errors = {
+    minLength: false,
+    upperCase: false,
+    number: false,
+    specialChar: false
+  };
 
   continue() {
     this.showFirstPart = false;
@@ -54,15 +72,28 @@ export class RestorePasswordComponent {
   }
 
   validatePassword1() {
-    this.password1Invalid = this.password1.length < 8;
+    this.password1Errors = this.getPasswordErrors(this.password1);
   }
 
   validatePassword2() {
-    this.password2Invalid = this.password2.length < 8;
+    this.password2Errors = this.getPasswordErrors(this.password2);
   }
 
   validatePassword3() {
-    this.password3Invalid = this.password3.length < 8;
+    this.password3Errors = this.getPasswordErrors(this.password3);
+  }
+
+  getPasswordErrors(password: string) {
+    return {
+      minLength: password.length < 8,
+      upperCase: !/[A-Z]/.test(password),
+      number: !/\d/.test(password),
+      specialChar: !/[!@#$%^&*(),.?":{}|<>]/.test(password)
+    };
+  }
+
+  isPasswordValid(errors: any) {
+    return !errors.minLength && !errors.upperCase && !errors.number && !errors.specialChar;
   }
 
   handleSubmitEmail() {
