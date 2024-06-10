@@ -62,7 +62,7 @@
           Si eres colaborador de DevStream ingresan con tu cuenta de Office
         </p>
         <div class="d-flex justify-content-center">
-          <button class="btn btn-outline-secondary">
+          <button class="btn btn-outline-secondary" (click)="onMicrosoftLogin()">
             <img src="../../../assets/microsoft.png" alt="microsoft" width="15px" />
             <span class="ms-2">Sign in with Microsoft</span>
           </button>
@@ -76,10 +76,10 @@
         </p>
         <div class="d-flex flex-column align-items-start">
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Ingrese su usuario" />
+            <input type="text" class="form-control" placeholder="Ingrese su usuario" [(ngModel)]="username" />
           </div>
           <div class="mb-3">
-            <input type="password" class="form-control" placeholder="Ingrese su contraseña" />
+            <input type="password" class="form-control" placeholder="Ingrese su contraseña" [(ngModel)]="password" />
           </div>
         </div>
         <div class="form-check">
@@ -92,7 +92,7 @@
           <a class="text-info" href="/auth/restore-password" style="text-decoration: none">¿Olvidaste tu contraseña?</a>
         </div>
         <div class="d-flex justify-content-center">
-          <button type="button" class="btn btn-secondary">Acceder</button>
+          <button type="button" class="btn btn-secondary" (click)="onLogin()">Acceder</button>
         </div>
       </div>
     </div>
