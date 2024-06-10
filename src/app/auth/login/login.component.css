@@ -1,0 +1,159 @@
+.custom-separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+.custom-separator::before,
+.custom-separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #6c757d;
+}
+.custom-separator::before {
+  margin-right: 10px;
+}
+.custom-separator::after {
+  margin-left: 10px;
+}
+.custom-separator .circle {
+  width: 10px;
+  height: 10px;
+  background-color: #6c757d;
+  border-radius: 50%;
+}
+
+.form-check-input {
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  background-color: transparent;
+  border: .5px solid #19e22b;
+  transition: background-color 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-check-input:checked {
+  background-color: #19e22b;
+  border-color: #19e22b;
+}
+.form-check-input:checked::after {
+  content: "";
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  display: block;
+}
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.bg-secondary-subtle {
+  background-color: #f0f0f0;
+}
+
+.box {
+  transition: background-color 0.3s;
+}
+
+.box:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.custom-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.modal-content {
+  border-radius: 10px;
+}
+
+.btn-outline-secondary {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.form-check-input[type="checkbox"] {
+  margin-top: 3px;
+}
+
+.form-control {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-secondary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-secondary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+/* Agregamos algunas animaciones */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilos para los cuadros */
+.box {
+  transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.box:hover {
+  background-color: #007bff;
+  color: #0f98c2;
+  transform: scale(1.05);
+}
+
+/* Estilos para el modal */
+.modal-content {
+  border-radius: 10px;
+  animation: slideInUp 0.5s ease-in-out;
+}
