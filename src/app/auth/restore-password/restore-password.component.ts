@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // Importa FormsModule
 import {
   FormBuilder,
   FormGroup,
@@ -11,7 +12,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-restore-password',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, CommonModule],
+  imports: [FormsModule, RouterOutlet, ReactiveFormsModule, CommonModule],
   templateUrl: './restore-password.component.html',
   styleUrl: './restore-password.component.css',
 })
@@ -29,6 +30,14 @@ export class RestorePasswordComponent {
   showPassword2: boolean = false;
   showPassword3: boolean = false;
 
+  password1 = '';
+  password2 = '';
+  password3 = '';
+
+  password1Invalid = false;
+  password2Invalid = false;
+  password3Invalid = false;
+
   continue() {
     this.showFirstPart = false;
   }
@@ -39,8 +48,21 @@ export class RestorePasswordComponent {
   togglePassword2() {
     this.showPassword2 = !this.showPassword2;
   }
+
   togglePassword3() {
     this.showPassword3 = !this.showPassword3;
+  }
+
+  validatePassword1() {
+    this.password1Invalid = this.password1.length < 8;
+  }
+
+  validatePassword2() {
+    this.password2Invalid = this.password2.length < 8;
+  }
+
+  validatePassword3() {
+    this.password3Invalid = this.password3.length < 8;
   }
 
   handleSubmitEmail() {

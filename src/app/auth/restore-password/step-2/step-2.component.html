@@ -8,50 +8,52 @@
         a usar.
       </p>
     </div>
-
-    <div class="row justify-content-center mt-5">
-      <div class="input-group mb-3">
-        <div class="col-auto">
-          <input
-            type="password"
-            class="form-control"
-            placeholder="Ingrese la contraseña enviada"
-          />
+    
+    <form class="form" [formGroup]="formGroup">
+      <div class="row justify-content-center mt-5">
+        <div class="input-group mb-3">
+          <div class="col-auto">
+            <input
+              type="password"
+              formControlName="contraTemp"
+              class="form-control"
+              placeholder="Ingrese la contraseña enviada"
+            />
+          </div>
+          <span class="input-group-text">
+            <i id="password-icon" class="bi bi-eye"></i>
+          </span>
         </div>
-        <span class="input-group-text">
-          <i id="password-icon" class="bi bi-eye"></i>
-        </span>
       </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="input-group mb-3">
-        <div class="col-auto">
-          <input
-            type="password"
-            class="form-control"
-            placeholder="Ingrese una nueva contraseña"
-          />
+      <div class="row justify-content-center">
+        <div class="input-group mb-3">
+          <div class="col-auto">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Ingrese una nueva contraseña"
+            />
+          </div>
+          <span class="input-group-text">
+            <i id="password-icon" class="bi bi-eye"></i>
+          </span>
         </div>
-        <span class="input-group-text">
-          <i id="password-icon" class="bi bi-eye"></i>
-        </span>
       </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="input-group mb-3">
-        <div class="col-auto">
-          <input
-            type="password"
-            class="form-control"
-            placeholder="Repita la contraseña"
-          />
+      <div class="row justify-content-center">
+        <div class="input-group mb-3">
+          <div class="col-auto">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Repita la contraseña"
+            />
+          </div>
+          <span class="input-group-text">
+            <i id="password-icon" class="bi bi-eye"></i>
+          </span>
         </div>
-        <span class="input-group-text">
-          <i id="password-icon" class="bi bi-eye"></i>
-        </span>
       </div>
-    </div>
-
-    <a class="btn btn-info text-white fw-bold mt-5" href="/auth/login">Finalizar</a>
+      <a class="btn btn-info text-white fw-bold mt-5" (click)="clickRegister" href="/auth/login" >Finalizar</a>
+    </form>
   </div>
 </div>
